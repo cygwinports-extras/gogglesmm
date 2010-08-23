@@ -1,0 +1,35 @@
+FOX_VERSION=1.6
+inherit fox
+
+DESCRIPTION="Goggles Music Manager"
+HOMEPAGE="http://code.google.com/p/gogglesmm/"
+SRC_URI="http://gogglesmm.googlecode.com/files/${P}.tar.bz2"
+
+src_compile() {
+	lndirs
+	cd ${B}
+
+	LIBEXT=".dll.a" \
+	LIBS="-lintl" \
+	./configure \
+		--prefix=/usr \
+		--dbus-prefix=/usr \
+		--fox-prefix=/usr \
+		--sqlite-prefix=/usr \
+		--taglib-prefix=/usr \
+		--xine-prefix=/usr \
+		|| error "configure failed"
+	cygmake
+}
+
+src_install() {
+	cd ${B}
+	dodir /usr/bin
+	cyginstall
+
+	for res in 16x16 32x32
+	do
+		insinto /usr/share/icons/hicolor/${res}/apps
+		newins icons/${res}_apps_musicmanager.png gogglesmm.png
+	done
+}
