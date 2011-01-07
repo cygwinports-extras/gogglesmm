@@ -3,7 +3,7 @@ inherit fox
 
 DESCRIPTION="Goggles Music Manager"
 HOMEPAGE="http://code.google.com/p/gogglesmm/"
-SRC_URI="http://gogglesmm.googlecode.com/files/${P}.tar.bz2"
+SRC_URI="http://gogglesmm.googlecode.com/files/${P}.tar.xz"
 
 src_compile() {
 	lndirs
