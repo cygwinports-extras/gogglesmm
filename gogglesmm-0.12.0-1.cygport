@@ -9,8 +9,8 @@ src_compile() {
 	lndirs
 	cd ${B}
 
-	LIBEXT=".dll.a" \
-	LIBS="-lintl" \
+	LIBEXT=.dll.a \
+	LIBS=-lintl \
 	./configure \
 		--prefix=/usr \
 		--dbus-prefix=/usr \
