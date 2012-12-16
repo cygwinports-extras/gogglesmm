@@ -1,0 +1,32 @@
+FOX_VERSION=1.6
+inherit fox
+
+NAME="gogglesmm"
+VERSION=0.12.7
+RELEASE=1
+CATEGORY="Audio"
+SUMMARY="FOX audio player"
+DESCRIPTION="Goggles Music Manager is a music collection manager and player
+that automatically categorizes MP3, MP4, Ogg Vorbis, FLAC, and Musepack files
+based on genre, artist, album, and song. There is no need to create playlists
+of any kind. Just select one or more artists and albums to start playing your
+music."
+HOMEPAGE="http://code.google.com/p/gogglesmm/"
+SRC_URI="http://gogglesmm.googlecode.com/files/${P}.tar.xz"
+
+src_compile() {
+	lndirs
+	cd ${B}
+
+	LIBEXT=.dll.a \
+	LIBS=-lintl \
+	./configure \
+		--prefix=/usr \
+		--dbus-prefix=/usr \
+		--fox-prefix=/usr \
+		--sqlite-prefix=/usr \
+		--taglib-prefix=/usr \
+		--xine-prefix=/usr \
+		|| error "configure failed"
+	cygmake
+}

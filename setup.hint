@@ -1,8 +1,0 @@
-category: Audio
-requires: libcurl4 libdbus1_3 libexpat1 libFOX1.6_0 libgcc1 libgcrypt11 libGL1 libGLU1 libintl8 libsqlite3_0 libstdc++6 libtag1 libX11_6 libxine1
-sdesc: "FOX audio player"
-ldesc: "Goggles Music Manager is a music collection manager and player 
-that automatically categorizes MP3, MP4, Ogg Vorbis, FLAC, and Musepack 
-files based on genre, artist, album, and song. There is no need to 
-create playlists of any kind. Just select one or more artists and albums 
-to start playing your music."
