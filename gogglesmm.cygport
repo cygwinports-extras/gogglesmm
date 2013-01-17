@@ -3,7 +3,7 @@ inherit fox
 
 NAME="gogglesmm"
 VERSION=0.12.7
-RELEASE=1
+RELEASE=2
 CATEGORY="Audio"
 SUMMARY="FOX audio player"
 DESCRIPTION="Goggles Music Manager is a music collection manager and player
